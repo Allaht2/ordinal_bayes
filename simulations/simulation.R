@@ -245,7 +245,7 @@ mean(mis1_model_times$freq) # Freq times
 N <- 50 # Sample size
 or <- 3 # Odds ratio
 k <- 5 # number of ordinal categories
-probs0 <- c(0.05, 0.05, 0.3, 0.3, 0.3)  # Probabilities
+probs0 <- c(0.05, 0.05, 0.325, 0.325, 0.25)  # Probabilities
 alpha <- prob_to_alpha(probs0, lin = "logit")
 
 # Calculating probabilities when x = 1
@@ -357,7 +357,7 @@ mean(mis2_model_times$freq) # Freq times
 # Hierarchical situation
 ## Parameter values
 k <- 5
-probs0 <- c(0.05, 0.05, 0.3, 0.3, 0.3)
+probs0 <- c(0.05, 0.05, 0.325, 0.325, 0.25)
 N <- 200 # sample size
 n <- N/2
 # nt <- 50 # number of trials
