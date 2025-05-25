@@ -158,14 +158,9 @@ mis1_model_estimates_para <- tibble()
 ## Simulations
 for (i in 1:50) {
   # Simulating data
-  repeat {
-    y <- data.frame(x= rep(c(0, 1), each = N/2))
-    y <- sim_ord_latent(location = ~x, beta = log(or), alpha = alpha, data = y,
-                        link = "logit")
-    if (length(unique(y$y)) == 4) {
-      break
-    }
-  }
+  y <- data.frame(x= rep(c(0, 1), each = N/2))
+  y <- sim_ord_latent(location = ~x, beta = log(or), alpha = alpha, data = y,
+                      link = "logit")
   y$x <- as.factor(y$x)
   # Fit frequentist model
   start_time <- Sys.time()
@@ -280,14 +275,9 @@ mis2_model_estimates_para <- tibble()
 ## Simulations
 for (i in 1:50) {
   # Simulating data
-  repeat {
-    y <- data.frame(x= rep(c(0, 1), each = N/2))
-    y <- sim_ord_latent(location = ~x, beta = log(or), alpha = alpha, data = y,
-                        link = "logit")
-    if (length(unique(y$y)) == 3) {
-      break
-    }
-  }
+  y <- data.frame(x= rep(c(0, 1), each = N/2))
+  y <- sim_ord_latent(location = ~x, beta = log(or), alpha = alpha, data = y,
+                      link = "logit")
   y$x <- as.factor(y$x)
   start_time <- Sys.time()
   fit_f_3 <- clm(y ~ x, data = y, lin = "logit")
